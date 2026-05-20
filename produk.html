@@ -1,0 +1,770 @@
+# motionpc_produk.html
+
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motion PC | Produk</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body{
+      background:
+      radial-gradient(circle at top left, rgba(255,255,255,0.03), transparent 30%),
+      linear-gradient(to bottom,#101010,#1b1b1b);
+
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    header{
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+
+      background: rgba(15,15,15,0.72);
+      backdrop-filter: blur(14px);
+
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    nav{
+      width: 90%;
+      margin: auto;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 18px 0;
+    }
+
+    .logo{
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .logo i{
+      margin-right: 8px;
+      color: #d0d0d0;
+    }
+
+    .logo span{
+      color: #8f8f8f;
+      font-weight: 400;
+    }
+
+    .nav-links{
+      display: flex;
+      gap: 35px;
+      list-style: none;
+    }
+
+    .nav-links a{
+      text-decoration: none;
+      color: #d6d6d6;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    .nav-links a::after{
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: -6px;
+      background: linear-gradient(to right,#8f8f8f,#d6d6d6);
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover{
+      color: white;
+    }
+
+    .nav-links a:hover::after{
+      width: 100%;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+      padding-top: 170px;
+      padding-bottom: 120px;
+
+      text-align: center;
+
+      background:
+      linear-gradient(rgba(10,10,10,0.82),rgba(15,15,15,0.94)),
+      url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1470&auto=format&fit=crop');
+
+      background-size: cover;
+      background-position: center;
+
+      position: relative;
+    }
+
+    .hero::before{
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 50%;
+      filter: blur(120px);
+      top: 0;
+      right: 0;
+    }
+
+    .hero-badge{
+      display: inline-block;
+      padding: 10px 24px;
+      border-radius: 50px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #d4d4d4;
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .hero h1{
+      font-size: 78px;
+      margin-bottom: 20px;
+      font-weight: 800;
+      position: relative;
+      z-index: 5;
+    }
+
+    .hero span{
+      color: #9d9d9d;
+    }
+
+    .hero p{
+      max-width: 760px;
+      margin: auto;
+      color: #d0d0d0;
+      line-height: 1.9;
+      font-size: 17px;
+      position: relative;
+      z-index: 5;
+    }
+
+    /* ================= SEARCH ================= */
+
+    .search-section{
+      width: 90%;
+      margin: auto;
+      margin-top: -40px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .search-box{
+      background: rgba(35,35,35,0.92);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 26px;
+      padding: 22px;
+
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    }
+
+    .search-box i{
+      color: #d6d6d6;
+      font-size: 18px;
+    }
+
+    .search-box input{
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: white;
+      font-size: 15px;
+    }
+
+    .search-box input::placeholder{
+      color: #9d9d9d;
+    }
+
+    /* ================= CATEGORY ================= */
+
+    .category{
+      width: 90%;
+      margin: auto;
+
+      padding: 70px 0 30px;
+
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .category a{
+      text-decoration: none;
+      color: white;
+
+      padding: 13px 24px;
+      border-radius: 50px;
+
+      background: rgba(255,255,255,0.04);
+
+      border: 1px solid rgba(255,255,255,0.06);
+
+      transition: 0.3s;
+    }
+
+    .category a:hover{
+      background: linear-gradient(135deg,#686868,#a5a5a5);
+      transform: translateY(-5px);
+    }
+
+    .category i{
+      margin-right: 8px;
+    }
+
+    /* ================= PRODUCTS ================= */
+
+    .products{
+      width: 90%;
+      margin: auto;
+      padding: 40px 0 110px;
+    }
+
+    .section-title{
+      text-align: center;
+      margin-bottom: 65px;
+    }
+
+    .section-title h2{
+      font-size: 46px;
+      margin-bottom: 15px;
+    }
+
+    .section-title p{
+      color: #bdbdbd;
+    }
+
+    .product-container{
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(290px,1fr));
+      gap: 35px;
+    }
+
+    .product-card{
+      background: rgba(35,35,35,0.95);
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: 0.35s ease;
+      position: relative;
+    }
+
+    .product-card:hover{
+      transform: translateY(-12px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+    }
+
+    .product-image{
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-image img{
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .product-card:hover img{
+      transform: scale(1.07);
+    }
+
+    .product-tag{
+      position: absolute;
+      top: 18px;
+      left: 18px;
+
+      background: rgba(15,15,15,0.75);
+      border: 1px solid rgba(255,255,255,0.08);
+
+      padding: 8px 16px;
+      border-radius: 50px;
+
+      font-size: 12px;
+      color: #e5e5e5;
+    }
+
+    .favorite-btn{
+      position: absolute;
+      top: 18px;
+      right: 18px;
+
+      width: 42px;
+      height: 42px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 50%;
+
+      background: rgba(15,15,15,0.7);
+
+      color: #d6d6d6;
+    }
+
+    .product-info{
+      padding: 28px;
+    }
+
+    .product-rating{
+      color: #d6d6d6;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .product-info h3{
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
+
+    .product-info p{
+      color: #c7c7c7;
+      line-height: 1.9;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .product-bottom{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price{
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .buy-btn{
+      text-decoration: none;
+      color: white;
+
+      padding: 12px 18px;
+      border-radius: 50px;
+
+      background: linear-gradient(135deg,#666,#a4a4a4);
+
+      transition: 0.3s;
+    }
+
+    .buy-btn:hover{
+      transform: scale(1.06);
+    }
+
+    .buy-btn i{
+      margin-right: 8px;
+    }
+
+    footer{
+      padding: 35px;
+      text-align: center;
+      background: #101010;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      color: #8f8f8f;
+    }
+
+    @media(max-width:768px){
+
+      nav{
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .nav-links{
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h1{
+        font-size: 54px;
+      }
+
+      .section-title h2{
+        font-size: 35px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+
+  <header>
+
+    <nav>
+
+      <div class="logo">
+        <i class="fa-solid fa-microchip"></i>
+        Motion <span>PC</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="tentang.html">Profile Usaha</a></li>
+        <li><a href="produk.html">Produk</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+
+    </nav>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-badge">
+      ⚡ Premium Hardware Collection
+    </div>
+
+    <h1>
+      Explore <span>Our Products</span>
+    </h1>
+
+    <p>
+      Motion PC menyediakan berbagai sparepart komputer modern
+      dengan kualitas premium untuk gaming, editing,
+      dan kebutuhan workstation profesional.
+    </p>
+
+  </section>
+
+  <!-- SEARCH -->
+
+  <section class="search-section">
+
+    <div class="search-box">
+
+      <i class="fa-solid fa-magnifying-glass"></i>
+
+      <input type="text" placeholder="Cari processor, VGA, SSD, motherboard, dan lainnya...">
+
+    </div>
+
+  </section>
+
+  <!-- CATEGORY -->
+
+  <section class="category">
+
+    <a href="#produk"><i class="fa-solid fa-layer-group"></i> All Product</a>
+    <a href="#produk"><i class="fa-solid fa-microchip"></i> Processor</a>
+    <a href="#produk"><i class="fa-solid fa-display"></i> VGA</a>
+    <a href="#produk"><i class="fa-solid fa-memory"></i> RAM</a>
+    <a href="#produk"><i class="fa-solid fa-hard-drive"></i> SSD</a>
+    <a href="#produk"><i class="fa-solid fa-keyboard"></i> Keyboard</a>
+    <a href="#produk"><i class="fa-solid fa-computer"></i> Monitor</a>
+
+  </section>
+
+  <!-- PRODUCTS -->
+
+  <section class="products" id="produk">
+
+    <div class="section-title">
+
+      <h2>Featured Products</h2>
+
+      <p>
+        Koleksi hardware pilihan dengan desain modern dan performa maksimal.
+      </p>
+
+    </div>
+
+    <div class="product-container">
+
+      <!-- PRODUCT 1 -->
+
+      <div class="product-card">
+
+        <div class="product-image">
+
+          <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?q=80&w=1470&auto=format&fit=crop">
+
+          <div class="product-tag">Best Seller</div>
+
+          <div class="favorite-btn">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-rating">⭐ 4.9 • Gaming Series</div>
+
+          <h3>RTX Gaming VGA</h3>
+
+          <p>
+            VGA premium dengan performa tinggi untuk gaming ultra dan rendering profesional.
+          </p>
+
+          <div class="product-bottom">
+
+            <div class="price">Rp 6.499.000</div>
+
+            <a href="#" class="buy-btn">
+              <i class="fa-solid fa-cart-shopping"></i> Buy
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT 2 -->
+
+      <div class="product-card">
+
+        <div class="product-image">
+
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1470&auto=format&fit=crop">
+
+          <div class="product-tag">Fast Storage</div>
+
+          <div class="favorite-btn">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-rating">⭐ 4.8 • Gen 4 Speed</div>
+
+          <h3>SSD NVMe Gen4</h3>
+
+          <p>
+            Storage ultra cepat dengan performa stabil untuk multitasking modern.
+          </p>
+
+          <div class="product-bottom">
+
+            <div class="price">Rp 1.399.000</div>
+
+            <a href="#" class="buy-btn">
+              <i class="fa-solid fa-cart-shopping"></i> Buy
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT 3 -->
+
+      <div class="product-card">
+
+        <div class="product-image">
+
+          <img src="https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=1470&auto=format&fit=crop">
+
+          <div class="product-tag">RGB Edition</div>
+
+          <div class="favorite-btn">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-rating">⭐ 4.9 • Mechanical Keyboard</div>
+
+          <h3>Mechanical Keyboard</h3>
+
+          <p>
+            Keyboard gaming modern dengan RGB aesthetic dan switch responsif.
+          </p>
+
+          <div class="product-bottom">
+
+            <div class="price">Rp 899.000</div>
+
+            <a href="#" class="buy-btn">
+              <i class="fa-solid fa-cart-shopping"></i> Buy
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT 4 -->
+
+      <div class="product-card">
+
+        <div class="product-image">
+
+          <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1470&auto=format&fit=crop">
+
+          <div class="product-tag">High Performance</div>
+
+          <div class="favorite-btn">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-rating">⭐ 5.0 • Ryzen Series</div>
+
+          <h3>AMD Ryzen Processor</h3>
+
+          <p>
+            Processor modern dengan performa multitasking tinggi untuk gaming dan editing.
+          </p>
+
+          <div class="product-bottom">
+
+            <div class="price">Rp 4.250.000</div>
+
+            <a href="#" class="buy-btn">
+              <i class="fa-solid fa-cart-shopping"></i> Buy
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT 5 -->
+
+      <div class="product-card">
+
+        <div class="product-image">
+
+          <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=1470&auto=format&fit=crop">
+
+          <div class="product-tag">Gaming Monitor</div>
+
+          <div class="favorite-btn">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-rating">⭐ 4.8 • 144Hz Display</div>
+
+          <h3>Gaming Monitor</h3>
+
+          <p>
+            Monitor gaming dengan refresh rate tinggi dan tampilan visual ultra smooth.
+          </p>
+
+          <div class="product-bottom">
+
+            <div class="price">Rp 2.999.000</div>
+
+            <a href="#" class="buy-btn">
+              <i class="fa-solid fa-cart-shopping"></i> Buy
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT 6 -->
+
+      <div class="product-card">
+
+        <div class="product-image">
+
+          <img src="https://images.unsplash.com/photo-1562976540-1502c2145186?q=80&w=1470&auto=format&fit=crop">
+
+          <div class="product-tag">RGB Memory</div>
+
+          <div class="favorite-btn">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-rating">⭐ 4.9 • DDR5 Series</div>
+
+          <h3>RGB RAM DDR5</h3>
+
+          <p>
+            RAM modern dengan pencahayaan RGB dan performa tinggi untuk gaming setup.
+          </p>
+
+          <div class="product-bottom">
+
+            <div class="price">Rp 1.799.000</div>
+
+            <a href="#" class="buy-btn">
+              <i class="fa-solid fa-cart-shopping"></i> Buy
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    © 2026 Motion PC • Premium Computer Parts Store
+
+  </footer>
+
+</body>
+</html>
